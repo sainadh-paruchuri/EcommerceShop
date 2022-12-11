@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #0e840e;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+}
+
+.header .title {
+    margin-left: 40px;
+
+}
+
+.header #navigation {
+
+    width: 50%;
+    margin: auto;
+
+}
+
+.header #navigation ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header #navigation ul li {
+    margin-right: 60px;
+    font-size: 24px;
+
+}
+
+.header #navigation ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.header #navigation ul li a:hover {
+    color: black;
+
+}

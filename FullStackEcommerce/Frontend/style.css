@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #0e840e;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+}
+.header .title{
+    margin-left:40px;
+    
+}
+.header #navigation{
+   
+    width: 50%;
+    margin: auto;
+   
+}
+.header #navigation ul{
+    list-style-type: none; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header #navigation ul li{
+    margin-right:60px;
+    font-size: 24px;
+   
+}
+.header #navigation ul li a{
+    text-decoration: none;
+    color: white;
+}
+.header #navigation ul li a:hover{
+    color: black;
+
+}
+
+.header .cart{
+    position: fixed;
+    right: 30px;
+    top: 15px;
+    font-size: 24px;
+    color: white;
+    background-color: #0e840e;
+    border: none;
+    cursor: pointer;
+}
+.products{
+    margin-left: 10%;
+    margin-top: 100px;
+
+}
+.cards{
+    width: 25%;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px black;
+    margin: 2%;
+}
+.img img{
+    width: 100%;
+    border-top-right-radius:5px ;
+    border-top-left-radius: 5px;
+    height: 200px;
+}
+.title {
+
+    text-align: center;
+    padding: 10px;
+
+}
+.des {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+/*    
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px; */
+}
+
+#AddToCart {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#AddToCart:hover {
+    background-color: black;
+    color: white;
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0e840e;
+}
+
+.footer h1 {
+    color: white;
+    font-size: 30px;
+}
+
+.footer ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.footer ul li {
+    padding: 20px;
+}
+th{
+    padding-right: 8rem;
+    padding-left: 6rem;
+    color: black;
+    font-size: 2rem;
+    padding-bottom: 30px;
+}
+td{ 
+     text-align: center;
+     padding-right: 6rem;
+     padding-left: 7rem;
+     color: black;
+    /* border: 1px solid black; */
+}
+/* tr{
+    border: 1px solid black;
+} */
+tbody{
+    display: flex;
+    margin-bottom: 20px;
+}
+tbody img{
+    height: 5rem;
+    width: 5rem;
+}
+.cart-item img{
+    display: block;
+}
+.cart-section {
+    background-color: whitesmoke;
+    color: white;
+    position: fixed;
+    top: 67px;
+    right: 0;
+    height: 100vh;
+    /* padding: 5rem; */
+    display: none;
+    padding-right: 2rem;
+     /* transform: translateX(100%); */
+}
+
+/* .cart-section.active {
+    transform: translateX(0);
+} */
+.cart_title{
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#close{
+    color: #0e840e;
+    font-size: 20px;
+    border: none;
+    position: fixed;
+    right: 10px;
+    top: 77px;
+    cursor: pointer;
+}
+#total{
+    color: black;
+    position: absolute;
+    right: 20px;
+}
+ .purchase{
+    text-align: center;    
+}
+#purchase-btn{
+    padding: 10px 20px;
+    background-color: #0e840e;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+#remove{
+    padding: 15px;
+    background-color: red;
+    color: white;
+    margin-left: 40px;
+    border: none;
+    border-radius: 5px;
+}
+.carts{
+         margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 20px;
+
+}
+/* about */
+.about h1 {
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.descripyion {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 30px;
+}
+
+.descripyion img {
+    width: 50%;
+    height: 250px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+}
+
+
+#tours h2 {
+    text-align: center;
+    margin-top: 130px;
+}
+
+.tour-item {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+hr {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.tour-item span {
+    font-size: 20px;
+    padding: 30px;
+
+
+}
+
+.tour-item button {
+    background-color: rebeccapurple;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* notification */
+.container {
+    position: fixed;
+    bottom: 1px;
+    right: 10px;
+
+}
+
+.toast {
+    background-color: #0e840e;
+    border-radius: 5px;
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+}

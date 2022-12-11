@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Products</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/addProduct.css">
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>SLC STORE</h1>
+        </div>
+        <nav id="navigation">
+            <ul>
+                <li><a href="#">Add Product</a></li>
+                <li><a href="#">Admin Products</a></li>
+            </ul>
+        </nav>
+    </div>
+    <form action="/products" method="POST" class="AddForm">
+        <h1>Add Product</h1>
+        <div id="form-control">
+                <label for="name">Name:</label>
+                <input type="text" id="productName" name="productName" required autocomplete="on">
+        </div>
+        <div id="form-control">
+            <label for="image">Image:</label>
+            <input type="text" id="imageName" name="imageName" required autocomplete="on">
+        </div>
+        <div id="form-control">
+            <label for="name">Price:</label>
+            <input type="text" id="price" name="price" required autocomplete="on">
+        </div>
+        <button type="submit">Add Product</button>
+
+    </form>
+</body>
+</html>
