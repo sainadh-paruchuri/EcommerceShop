@@ -37,7 +37,7 @@ products.addEventListener('click',(event)=>{
             alert('The item already added to the cart');
             return;
         }
-
+       
         document.querySelector('#number').innerText=parseInt(document.querySelector('#number').innerText)+1;
         const tbody=document.createElement('tbody');
         tbody.classList.add('cart-row');
@@ -65,9 +65,11 @@ products.addEventListener('click',(event)=>{
             <span>${product_name}</span>`
           const cartquantity=document.createElement('td');  
           cartquantity.classList.add('cart-quantity');
+          cartquantity.setAttribute('id',`quantity-${id}`)
           cartquantity.innerHTML=`<input type="text" value="1">`
         const cartPrice=document.createElement('td');
         cartPrice.classList.add('cart-price');
+        cartPrice.setAttribute('id',`price-${id}`)
         cartPrice.innerHTML=` ${price}
         <button id="remove">REMOVE</button>`;
         tr.appendChild(cartImage);
@@ -91,6 +93,15 @@ products.addEventListener('click',(event)=>{
         // </tr>`
 
         table.appendChild(tbody);
+        axios.post('http://localhost:3000/cart',{
+            itemName:product_name,
+            itemImage:img_src,
+            itemQuantity:1,
+            itemPrice:price,
+              
+        })
+        .then(response=>console.log(response))
+        .catch(err=>console.log(err))
 
     const container=document.querySelector('.container')
 
@@ -149,11 +160,6 @@ function showProductsOnScreen(product){
     card.appendChild(des);
 
     products.appendChild(card);
-
-
-
-
-
 }
 
 
@@ -208,8 +214,8 @@ document.querySelector('#purchase-btn').addEventListener('click',()=>{
         })
 
     document.querySelector('.cart-section').addEventListener('click',(e)=>{
-        console.log(e.target.parentNode.parentNode.parentNode.id)
-        e.target.parentNode.parentNode.parentNode.id.remove();
+        // console.log(e.target.parentNode.parentNode.parentNode.id)
+        // e.target.parentNode.parentNode.parentNode.id.remove();
         // console.log(id);
         // document.getElementById('id').remove()
         // if(e.target.id=='remove'){
@@ -217,5 +223,6 @@ document.querySelector('#purchase-btn').addEventListener('click',()=>{
         //     // console.log(document.getElementById('id'))
 
         // }
-
+         
     })
+    

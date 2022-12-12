@@ -1,6 +1,7 @@
 const Product=require('../models/product')
+const Cart=require('../models/cartItem');
 
-exports.postAddProdutc=(req,res)=>{
+exports.postAddProduct=(req,res)=>{
     console.log(req.body);
     const productName=req.body.productName;
     const imageName=req.body.imageName;
@@ -28,5 +29,25 @@ exports.getProducts=(req,res)=>{
     }).catch((err) => {
         console.log(err);
     });
+
+}
+exports.postAddCart=(req,res)=>{
+     console.log(req.body);
+    const productName=req.body.itemName;
+    const imageName=req.body.itemImage;
+    const quantity=req.body.itemQuantity;
+    const price=req.body.itemPrice;
+    Cart.create({
+        productName:productName,
+        imageName:imageName,
+        quantity:quantity,
+        price:price
+    })
+    .then((result) => {
+      console.log(result);  
+    }).catch((err) => {
+        console.log(err);
+    });
+    res.redirect('/');
 
 }
