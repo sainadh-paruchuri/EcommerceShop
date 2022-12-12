@@ -11,7 +11,7 @@ const User=require('./models/user')
 app.use(cors())
 app.use(bodyParser.json());
 
-// app.use(bodyParser.urlencoded({extended :false}));
+// app.post(bodyParser.urlencoded({extended :false}));
 
 
 const adminRoutes=require('./routes/admin');
@@ -34,19 +34,23 @@ User.hasMany(Product);
 
 sequelize
 // .sync({ force :true})
-.sync()
-.then((result) => {
-    User.findByPk(1);
+// .sync()
+// .then((result) => {
+//     User.findByPk(1);
     
-})
-.then((user) => {
-    if(!user){
-        return User.create({name :'Sai',email:'sai@gmail.com'});
-    }
-    return user;
-})
-.then(user=>{
-    console.log(user)
+// })
+// .then((user) => {
+//     if(!user){
+//         return User.create({name :'Sai',email:'sai@gmail.com'});
+//     }
+//     return user;
+// })
+// .then(user=>{
+//     console.log(user)
+//     app.listen(3000)
+// })
+sequelize.sync()
+.then((result) => {
     app.listen(3000)
 })
 .catch((err) => {

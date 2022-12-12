@@ -51,3 +51,12 @@ exports.postAddCart=(req,res)=>{
     res.redirect('/');
 
 }
+
+exports.getCartProducts=(req,res)=>{
+    Cart.findAll().then((result) => {
+         res.status(200).json(result)        
+    }).catch((err) => {
+        console.log(err);
+    });
+
+}
