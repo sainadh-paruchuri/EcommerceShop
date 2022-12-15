@@ -51,7 +51,7 @@
 
 }
 .cart-section {
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     color: white;
     padding-right: 2rem;
     padding-top: 60px;
@@ -122,6 +122,7 @@ tbody img {
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    margin-top: 100px;
 }
 
 #remove {

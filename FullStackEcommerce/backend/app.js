@@ -4,10 +4,13 @@ const path=require('path')
 const sequelize=require('./util/database')
 const app=express();
 const cors=require('cors');
+
 const Product=require('./models/product')
 const User=require('./models/user')
 const Cart=require('./models/cart')
 const CartItem=require('./models/cartItem')
+const Order=require('./models/order');
+const OrderDetails=require('./models/orderdetails');
 
 
 
@@ -44,32 +47,43 @@ app.use(adminRoutes)
 // });
 
 Product.belongsTo(User, {constraints :true, onDelete:'CASCADE'});
-User.hasMany(Product);
+User.hasMany(Product); 
 User.hasOne(Cart);
 Cart.belongsTo(User);
 Cart.belongsToMany(Product,{ through : CartItem});
 Product.belongsToMany(Cart, { through : CartItem})
+
+Order.belongsToMany(Product, {through: OrderDetails});
+Product.belongsToMany(Order,{through: OrderDetails})
+User.hasMany(Order);
+
 
 
 sequelize
 // .sync({ force :true})
 .sync()
 .then((result) => {
-    User.findByPk(1);
+    User.findAll({where:{id:1}});
     
 })
 .then((user) => {
+    console.log(user)
     if(!user){
         return User.create({name :'Sai',email:'sai@gmail.com'});
     }
     return user;
 })
 .then(user=>{
-   return user.createCart()
+    user.createCart()
+    return user;
    
 })
-.then(cart=>{
-     app.listen(3000)
+.then(user=>{
+    return user.createOrder
+     
+})
+.then(order=>{
+    app.listen(3000)
 })
 .catch((err) => {
     console.log(err);

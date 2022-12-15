@@ -18,6 +18,8 @@ router.get('/cart',adminController.getCartProducts)
 
 router.get('/cartItem',adminController.getCartItemProducts)
 
+router.post('/order',adminController.postOrder);
+
 
 
 

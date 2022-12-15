@@ -19,7 +19,7 @@ async function showProductsOnCart(product){
         const id=product.id;
         const img_src=product.imageName;
         const product_name=product.productName;
-        const quantity=product.quantity;
+        const quantity=product.cartItem.quantity;
         const price=product.price;
 
         localStorage.setItem(id,img_src);

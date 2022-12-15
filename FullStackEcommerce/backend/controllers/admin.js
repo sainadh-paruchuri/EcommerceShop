@@ -153,3 +153,7 @@ exports.getCartItemProducts=(req,res)=>{
     })
     .catch(err=>console.log(err))
 }
+
+exports.postOrder=(req,res)=>{
+    
+}
