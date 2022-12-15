@@ -16,6 +16,7 @@ router.post('/cart',adminController.postAddCart);
 
 router.get('/cart',adminController.getCartProducts)
 
+router.get('/cartItem',adminController.getCartItemProducts)
 
 
 

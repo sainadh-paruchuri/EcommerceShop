@@ -54,8 +54,11 @@
     border: none;
     cursor: pointer;
 }
+.prductSection{
+    text-align: center;
+}
 .products{
-    margin-left: 10%;
+    /* margin-left: 10%; */
     margin-top: 100px;
 
 }
@@ -135,6 +138,17 @@ th{
     font-size: 2rem;
     padding-bottom: 30px;
 }
+.titles_h1 h1{
+    padding-right: 8rem;
+        padding-left: 6rem;
+        color: black;
+        font-size: 2rem;
+        padding-bottom: 30px;
+}
+.titles_h1{
+    display: flex;
+    margin-bottom: 20px;
+}
 td{ 
      text-align: center;
      padding-right: 6rem;
@@ -162,16 +176,17 @@ tbody img{
     position: fixed;
     top: 67px;
     right: 0;
-    height: 100vh;
+    height: 100vh; 
     /* padding: 5rem; */
     display: none;
-    padding-right: 2rem;
-     /* transform: translateX(100%); */
-}
+    padding-right: 2rem;  
+    padding-bottom: 300px;
+       /* transform: translateX(100%); */
+ }
 
-/* .cart-section.active {
+ .cart-section.active {
     transform: translateX(0);
-} */
+} 
 .cart_title{
     color: black;
     text-align: center;
@@ -193,7 +208,7 @@ tbody img{
 }
  .purchase{
     text-align: center;    
-}
+} 
 #purchase-btn{
     padding: 10px 20px;
     background-color: #0e840e;
@@ -291,4 +306,24 @@ hr {
     color: white;
     padding: 1rem;
     margin: 1rem;
+}
+.pegination, .pegination1{
+    text-align: center;
+    margin-top: 2rem;
+}
+.pegination button, .pegination1 button{
+    text-decoration: none;
+    color: #0e840e;
+    padding: 0.5rem;
+    border: 1px solid #0e840e;
+    background-color: white;
+    margin: 0.2rem;
+
+}
+.pegination button:hover,
+.pegination button:active,
+.pegination1 button:hover,
+.pegination1 button:active{
+    background-color: #0e840e;
+    color: white;
 }

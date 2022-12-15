@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="cartstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>SLC STORE</h1>
+        </div>
+        <nav id="navigation">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="index.html">PRODUCTS</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="#">CART<span id="number">0</span></a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <div class="cart-section">
+        <h1 class="cart_title">CART</h1>
+        <button id="close">X</button>
+        <div class="titles_h1">
+            <h1>product</h1>
+            <h1>quantity</h1>
+            <h1>prcice</h1>
+        </div>
+        <div class="cartproducts"></div>
+        <div class="pegination1"></div>
+    
+        <div class="purchase">
+            <button id="purchase-btn">Purchase</button>
+        </div>
+    
+        <h1 id="total">Total Amount : <span id="total-amount">0</span></h1>
+    
+    </div>
+
+    <script src="cartscript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"
+        integrity="sha512-zJYu9ICC+mWF3+dJ4QC34N9RA0OVS1XtPbnf6oXlvGrLGNB8egsEzu/5wgG90I61hOOKvcywoLzwNmPqGAdATA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </body>
