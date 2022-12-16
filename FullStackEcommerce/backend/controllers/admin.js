@@ -155,5 +155,60 @@ exports.getCartItemProducts=(req,res)=>{
 }
 
 exports.postOrder=(req,res)=>{
+    // console.log(req.body)
+    // console.log('hello')
+    let fetchedCart;
+    req.user
+    .getCart()
+    .then(cart=>{
+        fetchedCart=cart;
+        return cart.getProducts()
+    })
+    .then(products=>{
+       return req.user.createOrder()
+       .then(order=>{
+        order.addProduct(products.map(product=>{
+            product.orderdetails={ quantity:product.cartItem.quantity};
+            return product;
+        }))
+       })
+       .catch(err=>console.log(err));
+    })
+    .then(result=>{
+         return fetchedCart.setProducts(null)
+       
+    })
+    .then(result=>{
+         res.status(200).json({id:result.id ,message :true}); 
+        console.log(result);
+    })
+    .catch(err=>console.log(err))
     
+}
+
+exports.getOrders=(req,res)=>{
+    console.log('hello');
+    req.user.getOrders({include : ['products']})
+    .then(orders=>{
+        console.log(orders)
+        res.status(200).json(orders);
+    })
+    .catch(err=>console.log(err))
+}
+
+exports.deleteCart=(req,res)=>{
+    console.log(req.params.id);
+    const id=req.params.id
+    req.user.getCart()
+    .then(cart=>{
+        return cart.getProducts({where:{id:id}});
+    })
+    .then(products=>{
+        const product=products[0];
+        return product.cartItem.destroy();
+    })
+    .then(result=>{
+        res.status(200).json({message:true})
+    })
+    .catch(err=>console.log(err))
 }

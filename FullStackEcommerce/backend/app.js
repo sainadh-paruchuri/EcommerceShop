@@ -74,15 +74,10 @@ sequelize
     return user;
 })
 .then(user=>{
-    user.createCart()
-    return user;
+    return user.createCart()
    
 })
-.then(user=>{
-    return user.createOrder
-     
-})
-.then(order=>{
+.then(cart=>{
     app.listen(3000)
 })
 .catch((err) => {

@@ -18,7 +18,12 @@ router.get('/cart',adminController.getCartProducts)
 
 router.get('/cartItem',adminController.getCartItemProducts)
 
-router.post('/order',adminController.postOrder);
+router.post('/create-order',adminController.postOrder);
+
+router.get('/orders',adminController.getOrders);
+
+router.delete('/deletecart/:id',adminController.deleteCart);
+
 
 
 
