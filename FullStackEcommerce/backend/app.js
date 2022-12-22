@@ -4,6 +4,8 @@ const path=require('path')
 const sequelize=require('./util/database')
 const app=express();
 const cors=require('cors');
+const dotenv=require('dotenv');
+
 
 const Product=require('./models/product')
 const User=require('./models/user')
@@ -13,11 +15,11 @@ const Order=require('./models/order');
 const OrderDetails=require('./models/orderdetails');
 
 
-
+dotenv.config();
 app.use(cors())
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
-// app.use(bodyParser.urlencoded({extended :false}));
+app.use(bodyParser.urlencoded({extended :false}));
 
 
 
